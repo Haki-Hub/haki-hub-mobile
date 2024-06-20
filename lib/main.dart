@@ -6,7 +6,7 @@ void main() {
   runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: AppColors.primaryColor,
+        primaryColor: AppColors.secondaryColor,
         useMaterial3: false,
       ),
       home: const HomePage()));
