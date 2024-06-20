@@ -1,5 +1,61 @@
+import 'package:flutter/material.dart';
 import 'package:haki_hub/domain/models/helpline.dart';
 import 'package:haki_hub/domain/value_objects/enums.dart';
+
+// Define the content for each section using a Map
+final Map<String, List<Map<String, dynamic>>> sections = {
+  'Civic Education': [
+    {
+      'icon': Icons.credit_card,
+      'title': 'Finance Bill 2024',
+      'subtitle': 'Understanding the Finance Bill 2024',
+    },
+    {
+      'icon': Icons.security,
+      'title': 'Data Protection Act 2019',
+      'subtitle':
+          'Exploring the rights and duties of citizens in the Data Protection Act 2019',
+    },
+    {
+      'icon': Icons.gavel,
+      'title': 'Picketing and Boycotting Etiquette',
+      'subtitle': 'The importance of law and order in society.',
+    },
+  ],
+  'Health and Safety': [
+    {
+      'icon': Icons.health_and_safety,
+      'title': 'Health and First Aid',
+    },
+    {
+      'icon': Icons.warning,
+      'title': 'Teargas Recovery',
+    },
+    {
+      'icon': Icons.healing,
+      'title': 'Injury Recovery',
+    },
+    {
+      'icon': Icons.phone,
+      'title': 'Medical Helplines',
+    },
+    {
+      'icon': Icons.healing,
+      'title': 'Mental Health Support',
+    },
+    {
+      'icon': Icons.security,
+      'title': 'Protest Safety Tips',
+      'subtitle': 'Guidelines for staying safe during protests.',
+    },
+    {
+      'icon': Icons.contact_phone,
+      'title': 'Emergency Contact Sharing',
+      'subtitle':
+          'Allow users to share their emergency contact details with trusted individuals.',
+    },
+  ],
+};
 
 final List<Helpline> myCareHubHelplines = <Helpline>[
   // Ambulances
