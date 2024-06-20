@@ -4,10 +4,9 @@ import 'package:haki_hub/domain/value_objects/spaces.dart';
 import 'package:haki_hub/domain/value_objects/strings.dart';
 import 'package:haki_hub/presentation/helplines/widgets/card.dart';
 import 'package:haki_hub/presentation/shared/app_scaffold.dart';
-import 'package:haki_hub/routes/routes.dart';
 
-class HelplinePage extends StatelessWidget {
-  const HelplinePage({super.key});
+class Helpline extends StatelessWidget {
+  const Helpline({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +48,7 @@ class HelplinePage extends StatelessWidget {
                 ),
               ),
               mediumVerticalSizedBox,
-              Wrap(
+              const Wrap(
                 spacing: 12,
                 runSpacing: 12,
                 children: <Widget>[
@@ -57,22 +56,16 @@ class HelplinePage extends StatelessWidget {
                     icon: Icons.local_hospital,
                     title: ambulancesString,
                     color: AppColors.secondaryColor400,
-                    onPressed: () => Navigator.of(context)
-                        .pushNamed(AppRoutes.ambulanceHelplinePageRoute),
                   ),
                   EmergencyCard(
                     icon: Icons.gavel,
                     title: lawString,
                     color: AppColors.primaryColor400,
-                    onPressed: () => Navigator.of(context)
-                        .pushNamed(AppRoutes.lawHelplinePageRoute),
                   ),
                   EmergencyCard(
                     icon: Icons.local_police,
                     title: policeString,
                     color: AppColors.tertiaryColor400,
-                    onPressed: () => Navigator.of(context)
-                        .pushNamed(AppRoutes.policeHelplinePageRoute),
                   ),
                 ],
               ),
