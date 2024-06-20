@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:haki_hub/presentation/Helplines/helpline.dart';
+import 'package:haki_hub/presentation/helplines/pages/helpline.dart';
 import 'package:haki_hub/presentation/content/content.dart';
 import 'package:haki_hub/presentation/content/updates.dart';
 import 'package:haki_hub/presentation/home/pages/home_page.dart';
@@ -49,7 +49,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
           selectedIndex: _selectedPageIndex,
           onDestinationSelected: _selectPage,
           animationDuration: const Duration(seconds: 2),
-          labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+          labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
           destinations: const [
             NavigationDestination(
               icon: Icon(

@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:haki_hub/domain/value_objects/strings.dart';
 import 'package:haki_hub/domain/value_objects/utils.dart';
 import 'package:haki_hub/presentation/shared/app_scaffold.dart';
 import 'package:haki_hub/presentation/shared/section_widget.dart';
@@ -10,7 +11,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      title: 'Haki Hub',
+      title: appName,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
