@@ -10,6 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
+      title: 'Haki Hub',
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
