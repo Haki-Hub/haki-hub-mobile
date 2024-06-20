@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:haki_hub/domain/value_objects/app_colors.dart';
 import 'package:haki_hub/presentation/helplines/pages/helpline_page.dart';
 import 'package:haki_hub/presentation/content/content.dart';
 import 'package:haki_hub/presentation/content/updates.dart';
@@ -36,7 +37,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         data: const NavigationBarThemeData(
           labelTextStyle: WidgetStatePropertyAll(
             TextStyle(
-              color: Colors.green,
+              color: AppColors.secondaryColor400,
               fontWeight: FontWeight.w700,
               fontSize: 12,
             ),
@@ -44,8 +45,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
         ),
         child: NavigationBar(
           height: 70,
-          surfaceTintColor: Colors.green,
-          indicatorColor: Colors.green,
+          surfaceTintColor: AppColors.secondaryColor400,
+          indicatorColor: AppColors.secondaryColor400,
           selectedIndex: _selectedPageIndex,
           onDestinationSelected: _selectPage,
           animationDuration: const Duration(seconds: 2),
@@ -54,7 +55,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
             NavigationDestination(
               icon: Icon(
                 Icons.home_outlined,
-                color: Colors.black,
+                color: AppColors.primaryColor400,
               ),
               selectedIcon: Icon(
                 Icons.home,
@@ -65,7 +66,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
             NavigationDestination(
               icon: Icon(
                 Icons.article_outlined,
-                color: Colors.black,
+                color: AppColors.primaryColor400,
               ),
               selectedIcon: Icon(
                 Icons.article,
@@ -76,7 +77,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
             NavigationDestination(
               icon: Icon(
                 Icons.update_outlined,
-                color: Colors.black,
+                color: AppColors.primaryColor400,
               ),
               selectedIcon: Icon(
                 Icons.update,
@@ -87,7 +88,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
             NavigationDestination(
               icon: Icon(
                 Icons.help_outline,
-                color: Colors.black,
+                color: AppColors.primaryColor400,
               ),
               selectedIcon: Icon(
                 Icons.help,

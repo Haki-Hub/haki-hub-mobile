@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:haki_hub/domain/value_objects/app_colors.dart';
 import 'package:haki_hub/domain/value_objects/spaces.dart';
 
 class HelplineTile extends StatelessWidget {
@@ -38,19 +39,19 @@ class HelplineTile extends StatelessWidget {
                     mediumVerticalSizedBox,
                     Text(
                       phone,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 14,
-                        color: Colors.green[800],
+                        color: AppColors.secondaryColor500,
                       ),
                     ),
                   ],
                 ),
                 Container(
                   padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.green[800],
+                    color: AppColors.secondaryColor500,
                   ),
                   child: const Icon(
                     Icons.phone,
@@ -63,7 +64,7 @@ class HelplineTile extends StatelessWidget {
         ),
         smallVerticalSizedBox,
         const Divider(
-          color: Colors.green,
+          color: AppColors.secondaryColor400,
         ),
       ],
     );
