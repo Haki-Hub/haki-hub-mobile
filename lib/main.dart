@@ -7,7 +7,7 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: AppColors.secondaryColor,
+        primaryColor: AppColors.primaryColor400,
         useMaterial3: false,
       ),
       home: const BottomNavigation(),
