@@ -11,9 +11,6 @@ class AppScaffold extends StatelessWidget {
           backgroundColor: Theme.of(context).primaryColor,
           title: const Text('Haki Hub'),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: body,
-        ));
+        body: body);
   }
 }
