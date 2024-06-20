@@ -57,7 +57,7 @@ final Map<String, List<Map<String, dynamic>>> sections = {
   ],
 };
 
-final List<Helpline> myCareHubHelplines = <Helpline>[
+final List<Helpline> helplineData = <Helpline>[
   // Ambulances
   Helpline(
     category: HelplineCategory.Ambulance,

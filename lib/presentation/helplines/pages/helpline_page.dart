@@ -3,9 +3,10 @@ import 'package:haki_hub/domain/value_objects/spaces.dart';
 import 'package:haki_hub/domain/value_objects/strings.dart';
 import 'package:haki_hub/presentation/helplines/widgets/card.dart';
 import 'package:haki_hub/presentation/shared/app_scaffold.dart';
+import 'package:haki_hub/routes/routes.dart';
 
-class Helpline extends StatelessWidget {
-  const Helpline({super.key});
+class HelplinePage extends StatelessWidget {
+  const HelplinePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,18 +53,24 @@ class Helpline extends StatelessWidget {
                 children: [
                   EmergencyCard(
                     icon: Icons.local_hospital,
-                    title: ambulanceString,
+                    title: ambulancesString,
                     color: Colors.green[900]!,
+                    onPressed: () => Navigator.of(context)
+                        .pushNamed(AppRoutes.ambulanceHelplinePageRoute),
                   ),
                   EmergencyCard(
                     icon: Icons.gavel,
                     title: lawString,
                     color: Colors.grey[900]!,
+                    onPressed: () => Navigator.of(context)
+                        .pushNamed(AppRoutes.lawHelplinePageRoute),
                   ),
                   EmergencyCard(
                     icon: Icons.local_police,
                     title: policeString,
                     color: Colors.blue[900]!,
+                    onPressed: () => Navigator.of(context)
+                        .pushNamed(AppRoutes.policeHelplinePageRoute),
                   ),
                 ],
               ),

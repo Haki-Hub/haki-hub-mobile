@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:haki_hub/presentation/helplines/pages/helpline.dart';
+import 'package:haki_hub/presentation/helplines/pages/helpline_page.dart';
 import 'package:haki_hub/presentation/content/content.dart';
 import 'package:haki_hub/presentation/content/updates.dart';
 import 'package:haki_hub/presentation/home/pages/home_page.dart';
@@ -25,7 +25,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     HomePage(),
     Content(),
     Updates(),
-    Helpline(),
+    HelplinePage(),
   ];
 
   @override
