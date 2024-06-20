@@ -20,3 +20,4 @@ analyzer:
     unused_local_variable: warning
     unnecessary_cast: error
     duplicate_import: error
+    constant_identifier_names: ignore
