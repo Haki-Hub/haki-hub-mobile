@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:haki_hub/domain/value_objects/app_colors.dart';
+import 'package:haki_hub/domain/value_objects/asset_strings.dart';
 import 'package:haki_hub/domain/value_objects/strings.dart';
 import 'package:haki_hub/domain/value_objects/utils.dart';
 import 'package:haki_hub/presentation/home/widgets/carousel_card.dart';
@@ -22,7 +23,7 @@ class HomePage extends StatelessWidget {
             Stack(
               children: <Widget>[
                 Image.asset(
-                  'assets/images/banner-3.png',
+                  backgroundBannerImage,
                   fit: BoxFit.cover,
                   width: double.infinity,
                 ),
@@ -66,14 +67,14 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        'Civic Education',
+                        civicEducationString,
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       Text(
-                        'View All',
+                        viewAllString,
                         style: TextStyle(
                           fontSize: 20,
                           color: AppColors.secondaryColor500,
@@ -91,14 +92,14 @@ class HomePage extends StatelessWidget {
                       InfoCard(
                         icon: Icons.money,
                         isTertiaryColor: true,
-                        title: 'Finance Bill 2024',
-                        description: 'Learn about the new finance bill',
+                        title: financeBill2024String,
+                        description: financeBillCardDescription,
                       ),
                       InfoCard(
                         icon: Icons.lock,
                         isTertiaryColor: true,
-                        title: 'Data Protection Act',
-                        description: 'Learn about the 2019 data protection act',
+                        title: dataProtectionActString,
+                        description: dataProtectionCardDescription,
                       ),
                     ],
                   ),
@@ -111,14 +112,14 @@ class HomePage extends StatelessWidget {
                       InfoCard(
                         icon: Icons.accessibility,
                         isTertiaryColor: true,
-                        title: 'Protesting Rights',
-                        description: 'Learn about your constitutional right',
+                        title: protestingRightsString,
+                        description: protestingRightsCardDescription,
                       ),
                       InfoCard(
                         icon: Icons.language,
                         isTertiaryColor: true,
-                        title: 'ICT Bill',
-                        description: 'Learn about the ICT bill',
+                        title: ictBillString,
+                        description: ictBillCardDescription,
                       ),
                     ],
                   )
@@ -138,14 +139,14 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        'Resources',
+                        resourcesString,
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       Text(
-                        'View All',
+                        viewAllString,
                         style: TextStyle(
                           fontSize: 20,
                           color: AppColors.secondaryColor500,
@@ -163,16 +164,14 @@ class HomePage extends StatelessWidget {
                       InfoCard(
                         icon: Icons.health_and_safety,
                         isSecondaryColor: true,
-                        title: 'First Aid',
-                        description:
-                            'Get help with tear gas exposure, injury and more',
+                        title: firstAidCardDescription,
+                        description: firstAidCardDescription,
                       ),
                       InfoCard(
                         icon: Icons.psychology,
                         isSecondaryColor: true,
-                        title: 'Mental Health',
-                        description:
-                            'Get help with any distress including trauma, panic...',
+                        title: mentalHealthString,
+                        description: mentalHealthCardDescription,
                       ),
                     ],
                   ),
@@ -185,14 +184,14 @@ class HomePage extends StatelessWidget {
                       InfoCard(
                         icon: Icons.group,
                         isSecondaryColor: true,
-                        title: 'Communities',
-                        description: 'Find communities around civic education',
+                        title: communitiesString,
+                        description: communitiesCardDescription,
                       ),
                       InfoCard(
                         icon: Icons.attach_file,
                         isSecondaryColor: true,
-                        title: 'Downloads',
-                        description: 'Get relevant documents, media...',
+                        title: downloadsString,
+                        description: downloadsCardDescription,
                       ),
                     ],
                   )
@@ -211,14 +210,14 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        'Resources',
+                        resourcesString,
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       Text(
-                        'View All',
+                        viewAllString,
                         style: TextStyle(
                           fontSize: 20,
                           color: AppColors.secondaryColor500,
@@ -234,8 +233,8 @@ class HomePage extends StatelessWidget {
                     isTertiaryColor: true,
                     isFullLength: true,
                     hasBorder: true,
-                    title: 'Police Brutality',
-                    description: 'Report any incidents of police cruelty here',
+                    title: policeBrutalityString,
+                    description: policeBrutalityCardDescription,
                     onTap: () => Navigator.of(context)
                         .pushNamed(AppRoutes.policeHelplinePageRoute),
                   ),
@@ -247,9 +246,8 @@ class HomePage extends StatelessWidget {
                       isSecondaryColor: true,
                       isFullLength: true,
                       hasBorder: true,
-                      title: 'Medical Emergency',
-                      description:
-                          'Report any incidents of police cruelty here',
+                      title: medicalEmergencyCardDescription,
+                      description: medicalEmergencyCardDescription,
                       onTap: () => Navigator.of(context)
                           .pushNamed(AppRoutes.ambulanceHelplinePageRoute)),
                   const SizedBox(
@@ -259,8 +257,8 @@ class HomePage extends StatelessWidget {
                     icon: Icons.gavel,
                     isFullLength: true,
                     hasBorder: true,
-                    title: 'Lawyer Assistance',
-                    description: 'Reach out to pro bono lawyers for help',
+                    title: lawyerAssistanceString,
+                    description: lawyerAssistanceCardDescription,
                     onTap: () => Navigator.of(context)
                         .pushNamed(AppRoutes.lawHelplinePageRoute),
                   ),

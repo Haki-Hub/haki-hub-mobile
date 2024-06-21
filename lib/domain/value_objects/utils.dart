@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:haki_hub/domain/models/helpline.dart';
 import 'package:haki_hub/domain/value_objects/app_colors.dart';
 import 'package:haki_hub/domain/value_objects/enums.dart';
+import 'package:haki_hub/domain/value_objects/strings.dart';
 import 'package:haki_hub/presentation/home/widgets/carousel_card.dart';
 
 final List<CarouselCard> carouselSliderItems = <CarouselCard>[
   const CarouselCard(
-    chipTitle: 'Recent Update',
+    chipTitle: recentUpdatesString,
     chipTitleColor: AppColors.secondaryColor400,
     chipColor: AppColors.secondaryColor100,
     postTime: '12 hrs ago',
@@ -36,52 +37,50 @@ final Map<String, List<Map<String, dynamic>>> sections = {
   'Civic Education': [
     {
       'icon': Icons.credit_card,
-      'title': 'Finance Bill 2024',
-      'subtitle': 'Understanding the Finance Bill 2024',
+      'title': financeBill2024String,
+      'subtitle': financeBillCardDescription,
     },
     {
       'icon': Icons.security,
-      'title': 'Data Protection Act 2019',
-      'subtitle':
-          'Exploring the rights and duties of citizens in the Data Protection Act 2019',
+      'title': dataProtection2019String,
+      'subtitle': dataProtectionActSubtitle,
     },
     {
       'icon': Icons.gavel,
-      'title': 'Picketing and Boycotting Etiquette',
-      'subtitle': 'The importance of law and order in society.',
+      'title': picketingAndBoyCottingString,
+      'subtitle': picketingAndBoyCottingSubtitle,
     },
   ],
   'Health and Safety': [
     {
       'icon': Icons.health_and_safety,
-      'title': 'Health and First Aid',
+      'title': healthAndFirstAidString,
     },
     {
       'icon': Icons.warning,
-      'title': 'Teargas Recovery',
+      'title': teargasRecoveryString,
     },
     {
       'icon': Icons.healing,
-      'title': 'Injury Recovery',
+      'title': injuryRecoveryString,
     },
     {
       'icon': Icons.phone,
-      'title': 'Medical Helplines',
+      'title': medicalHelplinesString,
     },
     {
       'icon': Icons.healing,
-      'title': 'Mental Health Support',
+      'title': mentalHealthSupportString,
     },
     {
       'icon': Icons.security,
-      'title': 'Protest Safety Tips',
-      'subtitle': 'Guidelines for staying safe during protests.',
+      'title': protestSafetyString,
+      'subtitle': protestSafetySubtitle,
     },
     {
       'icon': Icons.contact_phone,
-      'title': 'Emergency Contact Sharing',
-      'subtitle':
-          'Allow users to share their emergency contact details with trusted individuals.',
+      'title': emergencyContactSharingString,
+      'subtitle': emergencyContactSubtitle,
     },
   ],
 };

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:haki_hub/domain/value_objects/asset_strings.dart';
 
 class AppScaffold extends StatelessWidget {
   const AppScaffold({
@@ -13,16 +14,17 @@ class AppScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: SvgPicture.asset('assets/icons/haki-white-bg.svg'),
-          backgroundColor: Colors.white,
-          title: Text(
-            title,
-            style: const TextStyle(
-              color: Colors.black,
-            ),
+      appBar: AppBar(
+        leading: SvgPicture.asset(logoSvg),
+        backgroundColor: Colors.white,
+        title: Text(
+          title,
+          style: const TextStyle(
+            color: Colors.black,
           ),
         ),
-        body: body);
+      ),
+      body: body,
+    );
   }
 }
