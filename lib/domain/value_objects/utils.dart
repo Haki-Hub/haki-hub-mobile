@@ -331,16 +331,24 @@ final List<Helpline> helplineData = <Helpline>[
     description: '',
   ),
   // Police
+  Helpline(
+    category: HelplineCategory.Police,
+    title: 'National Police Service',
+    phone: '999',
+    description: '',
+  ),
 ];
 final List<Content> contentData = <Content>[
   Content(
-    thumbnail: posterOneImage,
+    thumbnail: posterOneTwoImage,
     title: 'Honoring the Legacy of Rex Kanyike Masai',
     subtitle:
         'In memory of Rex Kanyike Masai, who gave his life fighting for the freedom of Kenyans. #ForRex #RejectFinanceBill2024 #TotalShutdown',
     description:
         'We remember Rex Kanyike Masai, a brave freedom fighter who tragically lost his life in the recent protests for Kenyan freedom. '
-        'His courage and dedication inspire us to continue the fight for justice and equality. Let us honor his memory and remain steadfast in our pursuit of freedom for all Kenyans. #ForRex #RejectFinanceBill2024 #TotalShutdown',
+        'His courage and dedication inspire us to continue the fight for justice and equality. Let us honor his memory and remain steadfast in our pursuit of freedom for all Kenyans. '
+        '#ForRex #RejectFinanceBill2024 #TotalShutdown',
+    timeStamp: '2024-06-20T09:00:00Z',
   ),
   Content(
     thumbnail: posterTwoImage,
@@ -348,6 +356,16 @@ final List<Content> contentData = <Content>[
     subtitle: 'Day 3: Honoring Rex Kanyike Masai (RIP)',
     description:
         'As we continue to demand justice and freedom, we honor the memory of Rex Kanyike Masai, who lost his life in the struggle. '
-        'President Ruto must listen to our voices. Reject the Finance Bill 2024 without amendments. We stand united in total shutdown until all protestors are free. #ForRex #RejectFinanceBill2024 #FreeAllProtestors',
+        'President Ruto must listen to our voices. Reject the Finance Bill 2024 without amendments. We stand united in total shutdown until all protestors are free. '
+        '#ForRex #RejectFinanceBill2024 #FreeAllProtestors',
+    timeStamp: '2024-06-20T12:00:00Z',
+  ),
+  Content(
+    thumbnail: posterThreeImage,
+    title: 'Blood Donation Appeal',
+    subtitle: 'Blood Donation Appeal for victims of Finance Bill 2024 protests',
+    description:
+        'Let\'s paint the country red, and aim for zero mortality due to blood loss #MedicsForKenya #DonateBlood #SaveLives',
+    timeStamp: '2024-06-20T13:00:00Z',
   ),
 ];

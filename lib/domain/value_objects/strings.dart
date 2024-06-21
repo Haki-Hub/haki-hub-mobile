@@ -50,15 +50,15 @@ const String communitiesCardDescription =
 const String downloadsString = 'Download';
 const String downloadsCardDescription = 'Get relevant documents, media...';
 
-const String policeBrutalityTitleString = 'Police Brutality Hotline';
+const String policeBrutalityTitleString = 'Police Brutality Helplines';
 const String policeBrutalityCardDescription =
     'Report incidents of police brutality';
 
-const String medicalEmergencyString = 'Ambulance Hotline';
+const String medicalEmergencyString = 'Ambulance Helplines';
 const String medicalEmergencyCardDescription =
     'Request assistance from ambulance services';
 
-const String lawyerAssistanceString = 'Legal Aid Hotline';
+const String lawyerAssistanceString = 'Legal Aid Helplines';
 const String lawyerAssistanceCardDescription =
     'Connect with pro bono legal assistance';
 
