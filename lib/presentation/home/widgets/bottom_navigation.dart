@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:haki_hub/domain/value_objects/app_colors.dart';
 import 'package:haki_hub/presentation/helplines/pages/helpline_page.dart';
-import 'package:haki_hub/presentation/content/content.dart';
-import 'package:haki_hub/presentation/content/updates.dart';
+import 'package:haki_hub/presentation/content/pages/content_page.dart';
+import 'package:haki_hub/presentation/content/pages/updates_page.dart';
 import 'package:haki_hub/presentation/home/pages/home_page.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -24,8 +24,8 @@ class _BottomNavigationState extends State<BottomNavigation> {
   // Home page, Content, Updates, Helplines
   final List<Widget> _pages = const [
     HomePage(),
-    Content(),
-    Updates(),
+    ContentPage(),
+    UpdatesPage(),
     HelplinePage(),
   ];
 

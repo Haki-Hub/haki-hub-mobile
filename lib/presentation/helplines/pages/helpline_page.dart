@@ -54,7 +54,7 @@ class HelplinePage extends StatelessWidget {
                   isSecondaryColor: true,
                   isFullLength: true,
                   hasBorder: true,
-                  title: medicalEmergencyCardDescription,
+                  title: medicalEmergencyString,
                   description: medicalEmergencyCardDescription,
                   onTap: () => Navigator.of(context)
                       .pushNamed(AppRoutes.ambulanceHelplinePageRoute)),
@@ -64,7 +64,7 @@ class HelplinePage extends StatelessWidget {
                 isTertiaryColor: true,
                 isFullLength: true,
                 hasBorder: true,
-                title: policeBrutalityString,
+                title: policeBrutalityTitleString,
                 description: policeBrutalityCardDescription,
                 onTap: () => Navigator.of(context)
                     .pushNamed(AppRoutes.policeHelplinePageRoute),

@@ -1,0 +1,30 @@
+import 'package:flutter/material.dart';
+import 'package:haki_hub/domain/models/content.dart';
+import 'package:haki_hub/domain/value_objects/strings.dart';
+import 'package:haki_hub/domain/value_objects/utils.dart';
+import 'package:haki_hub/presentation/content/widget/content_card.dart';
+import 'package:haki_hub/presentation/shared/app_scaffold.dart';
+
+class UpdatesPage extends StatelessWidget {
+  const UpdatesPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppScaffold(
+      title: protestUpdatesString,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(children: [
+            ...contentData.map(
+              (Content content) => ContentCard(
+                subtitle: content.subtitle!,
+                imageName: content.thumbnail,
+              ),
+            ),
+          ]),
+        ),
+      ),
+    );
+  }
+}

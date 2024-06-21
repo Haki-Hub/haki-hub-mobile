@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:haki_hub/domain/value_objects/strings.dart';
 import 'package:haki_hub/presentation/shared/app_scaffold.dart';
 
-class Content extends StatelessWidget {
-  const Content({super.key});
+class ContentPage extends StatelessWidget {
+  const ContentPage({super.key});
 
   @override
   Widget build(BuildContext context) {
