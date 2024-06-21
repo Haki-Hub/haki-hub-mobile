@@ -10,6 +10,9 @@ class UpdatesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Sort contents by createdAt (ascending)
+    contentData.sort((a, b) => a.timeStamp!.compareTo(b.timeStamp!));
+
     return AppScaffold(
       title: protestUpdatesString,
       body: SingleChildScrollView(
