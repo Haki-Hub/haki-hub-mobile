@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:haki_hub/domain/value_objects/app_colors.dart';
 import 'package:haki_hub/presentation/shared/icon_avatar.dart';
 
 class InfoCard extends StatelessWidget {
   const InfoCard({
     super.key,
-    required this.icon,
     required this.title,
     required this.description,
+    this.icon,
+    this.assetName,
     this.isSecondaryColor = false,
     this.isTertiaryColor = false,
     this.isFullLength = false,
@@ -15,7 +17,8 @@ class InfoCard extends StatelessWidget {
     this.onTap,
   });
 
-  final IconData icon;
+  final IconData? icon;
+  final String? assetName;
   final String title;
   final String description;
   final bool isSecondaryColor;
@@ -26,13 +29,16 @@ class InfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color mainColor = AppColors.primaryColor400;
     Color backgroundColor = AppColors.primaryColor100;
     Color borderColor = Colors.transparent;
 
     if (isSecondaryColor) {
+      mainColor = AppColors.secondaryColor400;
       backgroundColor = AppColors.secondaryColor100;
       borderColor = AppColors.secondaryColor400;
     } else if (isTertiaryColor) {
+      mainColor = AppColors.tertiaryColor400;
       backgroundColor = AppColors.tertiaryColor100;
       borderColor = AppColors.tertiaryColor400;
     } else {
@@ -56,7 +62,13 @@ class InfoCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   IconAvatar(
-                    icon: icon,
+                    widget: assetName != null
+                        ? SvgPicture.asset(
+                            assetName!,
+                            width: 20,
+                            height: 20,
+                          )
+                        : const SizedBox(),
                     isSecondaryColor: isSecondaryColor,
                     isTertiaryColor: isTertiaryColor,
                   ),
@@ -79,8 +91,9 @@ class InfoCard extends StatelessWidget {
                         ),
                         Text(
                           description,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 16,
+                            color: Colors.grey[700],
                           ),
                         ),
                       ],
@@ -92,7 +105,11 @@ class InfoCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   IconAvatar(
-                    icon: icon,
+                    widget: Icon(
+                      icon,
+                      size: 30,
+                      color: mainColor,
+                    ),
                     isSecondaryColor: isSecondaryColor,
                     isTertiaryColor: isTertiaryColor,
                   ),
@@ -111,8 +128,9 @@ class InfoCard extends StatelessWidget {
                   ),
                   Text(
                     description,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 16,
+                      color: Colors.grey[700],
                     ),
                   ),
                 ],

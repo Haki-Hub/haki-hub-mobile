@@ -5,8 +5,11 @@ const String helplineDescriptionString = 'Our Helpline is here to support you. '
     'we are dedicated to providing you with the necessary resources and support.';
 const String needAssistanceString = 'Need assistance?';
 const String ambulancesString = 'Ambulances';
+const String ambulanceHelplinesString = 'Ambulance Helplines';
 const String lawString = 'Law';
+const String lawHelplinesString = 'Law Helplines';
 const String policeString = 'Police';
+const String policeHelplinesString = 'Police Helplines';
 const String viewAllString = 'View All';
 const String civicEducationString = 'Civic Education';
 const String healthAndSafetyString = 'Health and Safety';

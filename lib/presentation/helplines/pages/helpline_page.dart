@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:haki_hub/domain/value_objects/app_colors.dart';
+import 'package:haki_hub/domain/value_objects/asset_strings.dart';
 import 'package:haki_hub/domain/value_objects/spaces.dart';
 import 'package:haki_hub/domain/value_objects/strings.dart';
-import 'package:haki_hub/presentation/helplines/widgets/card.dart';
 import 'package:haki_hub/presentation/shared/app_scaffold.dart';
+import 'package:haki_hub/presentation/shared/info_card.dart';
 import 'package:haki_hub/routes/routes.dart';
 
 class HelplinePage extends StatelessWidget {
@@ -31,8 +31,8 @@ class HelplinePage extends StatelessWidget {
                     const Text(
                       needAssistanceString,
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18,
                         color: Colors.deepPurple,
                       ),
                     ),
@@ -40,42 +40,46 @@ class HelplinePage extends StatelessWidget {
                     Text(
                       helplineDescriptionString,
                       style: TextStyle(
-                        fontSize: 14,
-                        height: 1.2,
-                        color: Colors.deepPurple[900],
+                        fontSize: 16,
+                        height: 1.3,
+                        color: Colors.grey[700],
                       ),
                     ),
                   ],
                 ),
               ),
               mediumVerticalSizedBox,
-              Wrap(
-                spacing: 12,
-                runSpacing: 12,
-                children: <Widget>[
-                  EmergencyCard(
-                    icon: Icons.local_hospital,
-                    title: ambulancesString,
-                    color: AppColors.secondaryColor400,
-                    onPressed: () => Navigator.of(context)
-                        .pushNamed(AppRoutes.ambulanceHelplinePageRoute),
-                  ),
-                  EmergencyCard(
-                    icon: Icons.gavel,
-                    title: lawString,
-                    color: AppColors.primaryColor400,
-                    onPressed: () => Navigator.of(context)
-                        .pushNamed(AppRoutes.lawHelplinePageRoute),
-                  ),
-                  EmergencyCard(
-                    icon: Icons.local_police,
-                    title: policeString,
-                    color: AppColors.tertiaryColor400,
-                    onPressed: () => Navigator.of(context)
-                        .pushNamed(AppRoutes.policeHelplinePageRoute),
-                  ),
-                ],
+              InfoCard(
+                  assetName: ambulanceSvg,
+                  isSecondaryColor: true,
+                  isFullLength: true,
+                  hasBorder: true,
+                  title: medicalEmergencyCardDescription,
+                  description: medicalEmergencyCardDescription,
+                  onTap: () => Navigator.of(context)
+                      .pushNamed(AppRoutes.ambulanceHelplinePageRoute)),
+              size15VerticalSizedBox,
+              InfoCard(
+                assetName: nine11Svg,
+                isTertiaryColor: true,
+                isFullLength: true,
+                hasBorder: true,
+                title: policeBrutalityString,
+                description: policeBrutalityCardDescription,
+                onTap: () => Navigator.of(context)
+                    .pushNamed(AppRoutes.policeHelplinePageRoute),
               ),
+              size15VerticalSizedBox,
+              InfoCard(
+                assetName: buildingSvg,
+                isFullLength: true,
+                hasBorder: true,
+                title: lawyerAssistanceString,
+                description: lawyerAssistanceCardDescription,
+                onTap: () => Navigator.of(context)
+                    .pushNamed(AppRoutes.lawHelplinePageRoute),
+              ),
+              size15VerticalSizedBox,
             ],
           ),
         ),
