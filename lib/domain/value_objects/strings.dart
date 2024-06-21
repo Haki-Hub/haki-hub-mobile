@@ -50,17 +50,17 @@ const String communitiesCardDescription =
 const String downloadsString = 'Download';
 const String downloadsCardDescription = 'Get relevant documents, media...';
 
-const String policeBrutalityString = 'Police Brutality';
+const String policeBrutalityTitleString = 'Police Brutality Hotline';
 const String policeBrutalityCardDescription =
-    'Report any incidents of police cruelty here';
+    'Report incidents of police brutality';
 
-const String medicalEmergencyString = 'Medical Emergency';
+const String medicalEmergencyString = 'Ambulance Hotline';
 const String medicalEmergencyCardDescription =
-    'Report any incidents of police cruelty here';
+    'Request assistance from ambulance services';
 
-const String lawyerAssistanceString = 'Lawyer Assistance';
+const String lawyerAssistanceString = 'Legal Aid Hotline';
 const String lawyerAssistanceCardDescription =
-    'Reach out to pro bono lawyers for help';
+    'Connect with pro bono legal assistance';
 
 const String recentUpdatesString = 'Recent Update';
 const String healthAndFirstAidString = 'Health and First Aid';
@@ -77,3 +77,5 @@ const String protestSafetySubtitle =
 const String emergencyContactSharingString = 'Emergency Contact Sharing';
 const String emergencyContactSubtitle =
     'Allow users to share their emergency contact details with trusted individuals.';
+
+const String readMoreString = 'Read More';

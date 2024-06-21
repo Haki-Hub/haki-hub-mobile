@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:haki_hub/domain/models/content.dart';
 import 'package:haki_hub/domain/models/helpline.dart';
 import 'package:haki_hub/domain/value_objects/app_colors.dart';
+import 'package:haki_hub/domain/value_objects/asset_strings.dart';
 import 'package:haki_hub/domain/value_objects/enums.dart';
 import 'package:haki_hub/domain/value_objects/strings.dart';
 import 'package:haki_hub/presentation/home/widgets/carousel_card.dart';
@@ -329,4 +331,23 @@ final List<Helpline> helplineData = <Helpline>[
     description: '',
   ),
   // Police
+];
+final List<Content> contentData = <Content>[
+  Content(
+    thumbnail: posterOneImage,
+    title: 'Honoring the Legacy of Rex Kanyike Masai',
+    subtitle:
+        'In memory of Rex Kanyike Masai, who gave his life fighting for the freedom of Kenyans. #ForRex #RejectFinanceBill2024 #TotalShutdown',
+    description:
+        'We remember Rex Kanyike Masai, a brave freedom fighter who tragically lost his life in the recent protests for Kenyan freedom. '
+        'His courage and dedication inspire us to continue the fight for justice and equality. Let us honor his memory and remain steadfast in our pursuit of freedom for all Kenyans. #ForRex #RejectFinanceBill2024 #TotalShutdown',
+  ),
+  Content(
+    thumbnail: posterTwoImage,
+    title: 'Day 3: Honoring Rex Kanyike Masai (RIP)',
+    subtitle: 'Day 3: Honoring Rex Kanyike Masai (RIP)',
+    description:
+        'As we continue to demand justice and freedom, we honor the memory of Rex Kanyike Masai, who lost his life in the struggle. '
+        'President Ruto must listen to our voices. Reject the Finance Bill 2024 without amendments. We stand united in total shutdown until all protestors are free. #ForRex #RejectFinanceBill2024 #FreeAllProtestors',
+  ),
 ];

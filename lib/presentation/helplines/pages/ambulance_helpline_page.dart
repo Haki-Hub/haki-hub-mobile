@@ -23,7 +23,7 @@ class AmbulanceHelplinePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            children: ambulanceHelplines.map((helpline) {
+            children: ambulanceHelplines.map((Helpline helpline) {
               return HelplineTile(
                   title: helpline.title,
                   phone: helpline.phone,
