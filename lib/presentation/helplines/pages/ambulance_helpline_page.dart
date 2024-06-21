@@ -18,7 +18,7 @@ class AmbulanceHelplinePage extends StatelessWidget {
         .toList();
 
     return AppScaffold(
-      title: ambulancesString,
+      title: ambulanceHelplinesString,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -28,7 +28,6 @@ class AmbulanceHelplinePage extends StatelessWidget {
                   title: helpline.title,
                   phone: helpline.phone,
                   onPressed: () async {
-                    
                     final Uri uri = Uri(scheme: 'tel', path: helpline.phone);
                     if (await canLaunchUrl(uri)) {
                       await launchUrl(uri);

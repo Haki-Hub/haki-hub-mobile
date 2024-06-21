@@ -17,7 +17,7 @@ class Law extends StatelessWidget {
         .toList();
 
     return AppScaffold(
-      title: lawString,
+      title: lawHelplinesString,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

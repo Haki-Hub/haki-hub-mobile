@@ -8,7 +8,7 @@ class Police extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      title: policeString,
+      title: policeHelplinesString,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),

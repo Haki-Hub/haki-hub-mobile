@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:haki_hub/domain/value_objects/app_colors.dart';
 import 'package:haki_hub/domain/value_objects/asset_strings.dart';
+import 'package:haki_hub/domain/value_objects/spaces.dart';
 import 'package:haki_hub/domain/value_objects/strings.dart';
 import 'package:haki_hub/domain/value_objects/utils.dart';
 import 'package:haki_hub/presentation/home/widgets/carousel_card.dart';
@@ -130,12 +131,12 @@ class HomePage extends StatelessWidget {
               height: 26,
             ),
             // Resources Section
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 children: <Widget>[
                   // Header
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
@@ -154,11 +155,9 @@ class HomePage extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(
-                    height: 14,
-                  ),
+                  size15VerticalSizedBox,
                   // Card Items
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       InfoCard(
@@ -175,10 +174,8 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 14,
-                  ),
-                  Row(
+                  size15VerticalSizedBox,
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       InfoCard(
@@ -225,11 +222,9 @@ class HomePage extends StatelessWidget {
                       )
                     ],
                   ),
-                  const SizedBox(
-                    height: 14,
-                  ),
+                  size15VerticalSizedBox,
                   InfoCard(
-                    icon: Icons.sos,
+                    assetName: nine11Svg,
                     isTertiaryColor: true,
                     isFullLength: true,
                     hasBorder: true,
@@ -238,11 +233,9 @@ class HomePage extends StatelessWidget {
                     onTap: () => Navigator.of(context)
                         .pushNamed(AppRoutes.policeHelplinePageRoute),
                   ),
-                  const SizedBox(
-                    height: 14,
-                  ),
+                  size15VerticalSizedBox,
                   InfoCard(
-                      icon: Icons.emergency,
+                      assetName: ambulanceSvg,
                       isSecondaryColor: true,
                       isFullLength: true,
                       hasBorder: true,
@@ -250,11 +243,9 @@ class HomePage extends StatelessWidget {
                       description: medicalEmergencyCardDescription,
                       onTap: () => Navigator.of(context)
                           .pushNamed(AppRoutes.ambulanceHelplinePageRoute)),
-                  const SizedBox(
-                    height: 14,
-                  ),
+                  size15VerticalSizedBox,
                   InfoCard(
-                    icon: Icons.gavel,
+                    assetName: buildingSvg,
                     isFullLength: true,
                     hasBorder: true,
                     title: lawyerAssistanceString,
@@ -262,9 +253,7 @@ class HomePage extends StatelessWidget {
                     onTap: () => Navigator.of(context)
                         .pushNamed(AppRoutes.lawHelplinePageRoute),
                   ),
-                  const SizedBox(
-                    height: 14,
-                  ),
+                  size15VerticalSizedBox,
                 ],
               ),
             ),
