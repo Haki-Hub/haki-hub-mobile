@@ -1,14 +1,15 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:haki_hub/domain/value_objects/app_colors.dart';
-import 'package:haki_hub/domain/value_objects/asset_strings.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+
+import 'package:haki_hub/routes/routes.dart';
+import 'package:haki_hub/domain/value_objects/utils.dart';
 import 'package:haki_hub/domain/value_objects/spaces.dart';
 import 'package:haki_hub/domain/value_objects/strings.dart';
-import 'package:haki_hub/domain/value_objects/utils.dart';
-import 'package:haki_hub/presentation/home/widgets/carousel_card.dart';
-import 'package:haki_hub/presentation/shared/app_scaffold.dart';
 import 'package:haki_hub/presentation/shared/info_card.dart';
-import 'package:haki_hub/routes/routes.dart';
+import 'package:haki_hub/domain/value_objects/app_colors.dart';
+import 'package:haki_hub/presentation/shared/app_scaffold.dart';
+import 'package:haki_hub/domain/value_objects/asset_strings.dart';
+import 'package:haki_hub/presentation/home/widgets/carousel_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,9 +21,9 @@ class HomePage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
+          children: [
             Stack(
-              children: <Widget>[
+              children: [
                 Image.asset(
                   backgroundBannerImage,
                   fit: BoxFit.cover,
@@ -35,16 +36,14 @@ class HomePage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 10),
                     child: CarouselSlider(
-                      options: CarouselOptions(height: 110.0),
+                      options: CarouselOptions(height: 115.0),
                       items: carouselSliderItems.map((CarouselCard card) {
                         return Builder(
                           builder: (BuildContext context) {
                             return Container(
                               width: MediaQuery.of(context).size.width,
-                              margin:
-                                  const EdgeInsets.symmetric(horizontal: 5.0),
-                              decoration:
-                                  const BoxDecoration(color: Colors.amber),
+                              margin: const EdgeInsets.symmetric(horizontal: 5.0),
+                              decoration: const BoxDecoration(color: Colors.amber),
                               child: card,
                             );
                           },
@@ -55,9 +54,7 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 26,
-            ),
+            const SizedBox(height: 26),
             // Civic Education Section
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
@@ -66,7 +63,7 @@ class HomePage extends StatelessWidget {
                   // Header
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
+                    children: [
                       Text(
                         civicEducationString,
                         style: TextStyle(
@@ -77,19 +74,17 @@ class HomePage extends StatelessWidget {
                       Text(
                         viewAllString,
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 14,
                           color: AppColors.secondaryColor500,
                         ),
                       )
                     ],
                   ),
-                  SizedBox(
-                    height: 14,
-                  ),
+                  SizedBox(height: 14),
                   // Card Items
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
+                    children: [
                       InfoCard(
                         icon: Icons.money,
                         isTertiaryColor: true,
@@ -104,12 +99,10 @@ class HomePage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 14,
-                  ),
+                  SizedBox(height: 14),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
+                    children: [
                       InfoCard(
                         icon: Icons.accessibility,
                         isTertiaryColor: true,
@@ -134,7 +127,7 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
-                children: <Widget>[
+                children: [
                   // Header
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -149,7 +142,7 @@ class HomePage extends StatelessWidget {
                       Text(
                         viewAllString,
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 14,
                           color: AppColors.secondaryColor500,
                         ),
                       )
@@ -159,7 +152,7 @@ class HomePage extends StatelessWidget {
                   // Card Items
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
+                    children: [
                       InfoCard(
                         icon: Icons.health_and_safety,
                         isSecondaryColor: true,
@@ -177,7 +170,7 @@ class HomePage extends StatelessWidget {
                   size15VerticalSizedBox,
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
+                    children: [
                       InfoCard(
                         icon: Icons.group,
                         isSecondaryColor: true,
@@ -201,11 +194,11 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
-                children: <Widget>[
+                children: [
                   // Header
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
+                    children: [
                       Text(
                         resourcesString,
                         style: TextStyle(
@@ -216,7 +209,7 @@ class HomePage extends StatelessWidget {
                       Text(
                         viewAllString,
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 14,
                           color: AppColors.secondaryColor500,
                         ),
                       )
@@ -230,19 +223,22 @@ class HomePage extends StatelessWidget {
                     hasBorder: true,
                     title: policeBrutalityTitleString,
                     description: policeBrutalityCardDescription,
-                    onTap: () => Navigator.of(context)
-                        .pushNamed(AppRoutes.policeHelplinePageRoute),
+                    onTap: () => Navigator.of(context).pushNamed(
+                      AppRoutes.policeHelplinePageRoute
+                    ),
                   ),
                   size15VerticalSizedBox,
                   InfoCard(
-                      assetName: ambulanceSvg,
-                      isSecondaryColor: true,
-                      isFullLength: true,
-                      hasBorder: true,
-                      title: medicalEmergencyString,
-                      description: medicalEmergencyCardDescription,
-                      onTap: () => Navigator.of(context)
-                          .pushNamed(AppRoutes.ambulanceHelplinePageRoute)),
+                    assetName: ambulanceSvg,
+                    isSecondaryColor: true,
+                    isFullLength: true,
+                    hasBorder: true,
+                    title: medicalEmergencyString,
+                    description: medicalEmergencyCardDescription,
+                    onTap: () => Navigator.of(context).pushNamed(
+                      AppRoutes.ambulanceHelplinePageRoute
+                    )
+                  ),
                   size15VerticalSizedBox,
                   InfoCard(
                     assetName: buildingSvg,
@@ -250,8 +246,9 @@ class HomePage extends StatelessWidget {
                     hasBorder: true,
                     title: lawyerAssistanceString,
                     description: lawyerAssistanceCardDescription,
-                    onTap: () => Navigator.of(context)
-                        .pushNamed(AppRoutes.lawHelplinePageRoute),
+                    onTap: () => Navigator.of(context).pushNamed(
+                      AppRoutes.lawHelplinePageRoute
+                    ),
                   ),
                   size15VerticalSizedBox,
                 ],
