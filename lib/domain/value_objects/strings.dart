@@ -79,3 +79,6 @@ const String emergencyContactSubtitle =
     'Allow users to share their emergency contact details with trusted individuals.';
 
 const String readMoreString = 'Read More';
+const String updateDetailsString = 'Update Details';
+const String shareString = 'Share';
+const String downloadString = 'Download';
