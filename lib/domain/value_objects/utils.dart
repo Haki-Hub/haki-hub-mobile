@@ -337,6 +337,12 @@ final List<Helpline> helplineData = <Helpline>[
     phone: '999',
     description: '',
   ),
+  Helpline(
+    category: HelplineCategory.Police,
+    title: 'Independent Policing Oversight Authority(IPOA)',
+    phone: '020 4906000',
+    description: '',
+  ),
 ];
 final List<Content> contentData = <Content>[
   Content(

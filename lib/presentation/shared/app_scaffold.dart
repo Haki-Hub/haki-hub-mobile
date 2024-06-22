@@ -5,12 +5,14 @@ import 'package:haki_hub/domain/value_objects/asset_strings.dart';
 class AppScaffold extends StatelessWidget {
   const AppScaffold({
     super.key,
-    required this.body,
     required this.title,
+    required this.body,
+    this.floatingActionButton,
   });
 
-  final Widget body;
   final String title;
+  final Widget body;
+  final Widget? floatingActionButton;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +27,7 @@ class AppScaffold extends StatelessWidget {
         ),
       ),
       body: body,
+      floatingActionButton: floatingActionButton,
     );
   }
 }
