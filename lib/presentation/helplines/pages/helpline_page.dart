@@ -40,7 +40,7 @@ class HelplinePage extends StatelessWidget {
                     Text(
                       helplineDescriptionString,
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 15,
                         height: 1.3,
                         color: Colors.grey[700],
                       ),
