@@ -1,4 +1,4 @@
-import 'package:flutter_svg/svg.dart';
+// import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
 
 import 'package:haki_hub/domain/value_objects/app_colors.dart';
@@ -52,7 +52,8 @@ class InfoCard extends StatelessWidget {
         width: isFullLength
           ? MediaQuery.sizeOf(context).width - 20
           : (MediaQuery.sizeOf(context).width / 2.2),
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+        margin: EdgeInsets.only(bottom: isFullLength ? 10 : 0),
         decoration: BoxDecoration(
           color: hasBorder ? Colors.transparent : backgroundColor,
           borderRadius: BorderRadius.circular(10),
@@ -61,25 +62,21 @@ class InfoCard extends StatelessWidget {
         child: isFullLength
           ? Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
+              children: [
                 IconAvatar(
-                  widget: assetName != null
-                    ? SvgPicture.asset(
-                        assetName!,
-                        width: 20,
-                        height: 20,
-                      )
-                    : const SizedBox(),
+                  widget: Icon(
+                    icon,
+                    size: 30,
+                    color: mainColor,
+                  ),
                   isSecondaryColor: isSecondaryColor,
                   isTertiaryColor: isTertiaryColor,
                 ),
-                const SizedBox(
-                  width: 14,
-                ),
-                Flexible(
+                const SizedBox(width: 14),
+                Flexible( 
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
+                    children: [
                       Text(
                         title,
                         style: const TextStyle(
@@ -102,6 +99,7 @@ class InfoCard extends StatelessWidget {
             )
           : Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconAvatar(
                   widget: Icon(

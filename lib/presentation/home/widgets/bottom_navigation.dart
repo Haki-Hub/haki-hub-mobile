@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
+
 import 'package:haki_hub/domain/value_objects/app_colors.dart';
-import 'package:haki_hub/presentation/helplines/pages/helpline_page.dart';
-import 'package:haki_hub/presentation/content/pages/content_page.dart';
-import 'package:haki_hub/presentation/content/pages/updates_page.dart';
 import 'package:haki_hub/presentation/home/pages/home_page.dart';
+import 'package:haki_hub/presentation/content/pages/updates_page.dart';
+import 'package:haki_hub/presentation/content/pages/content_page.dart';
+import 'package:haki_hub/presentation/helplines/pages/helpline_page.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -54,44 +56,44 @@ class _BottomNavigationState extends State<BottomNavigation> {
           destinations: const [
             NavigationDestination(
               icon: Icon(
-                Icons.home_outlined,
+                FluentIcons.home_24_regular,
                 color: AppColors.primaryColor400,
               ),
               selectedIcon: Icon(
-                Icons.home,
+                FluentIcons.home_24_filled,
                 color: Colors.white,
               ),
               label: 'Home',
             ),
             NavigationDestination(
               icon: Icon(
-                Icons.article_outlined,
+                FluentIcons.learning_app_24_regular,
                 color: AppColors.primaryColor400,
               ),
               selectedIcon: Icon(
-                Icons.article,
+                FluentIcons.learning_app_24_filled,
                 color: Colors.white,
               ),
               label: 'Content',
             ),
             NavigationDestination(
               icon: Icon(
-                Icons.update_outlined,
+                FluentIcons.arrow_rotate_clockwise_24_regular,
                 color: AppColors.primaryColor400,
               ),
               selectedIcon: Icon(
-                Icons.update,
+                FluentIcons.arrow_rotate_clockwise_24_filled,
                 color: Colors.white,
               ),
               label: 'Updates',
             ),
             NavigationDestination(
               icon: Icon(
-                Icons.help_outline,
+                FluentIcons.chat_bubbles_question_24_regular,
                 color: AppColors.primaryColor400,
               ),
               selectedIcon: Icon(
-                Icons.help,
+                FluentIcons.chat_bubbles_question_24_filled,
                 color: Colors.white,
               ),
               label: 'Helplines',

@@ -36,14 +36,14 @@ class CarouselCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Container(
-                padding: const EdgeInsets.all(6),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 decoration: BoxDecoration(
                   color: chipColor,
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
                   chipTitle,
-                  style: TextStyle(color: chipTitleColor),
+                  style: TextStyle(color: chipTitleColor, fontSize: 11),
                 ),
               ),
               Text(
@@ -63,7 +63,7 @@ class CarouselCard extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             subtitle,
-            style: const TextStyle(fontSize: 12),
+            style: const TextStyle(fontSize: 13),
           )
         ],
       ),

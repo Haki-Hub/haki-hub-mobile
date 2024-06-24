@@ -1,5 +1,6 @@
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
+
 import 'package:haki_hub/domain/value_objects/asset_strings.dart';
 
 class AppScaffold extends StatelessWidget {
@@ -18,12 +19,14 @@ class AppScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5.0),
-          child: SvgPicture.asset(
-            logoSvg, height: 100, width: 100,
-          ),
-        ),
+        leading: Navigator.canPop(context)
+           ? const BackButton(color: Colors.black)
+           : Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5.0),
+              child: SvgPicture.asset(
+                logoSvg, height: 100, width: 100,
+              ),
+            ),
         backgroundColor: Colors.white,
         title: Text(
           title,

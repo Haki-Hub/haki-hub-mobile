@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-import 'package:haki_hub/routes/routes.dart';
+import 'package:haki_hub/application/dummy_data.dart';
 import 'package:haki_hub/domain/value_objects/utils.dart';
 import 'package:haki_hub/domain/value_objects/spaces.dart';
 import 'package:haki_hub/domain/value_objects/strings.dart';
 import 'package:haki_hub/presentation/shared/info_card.dart';
-import 'package:haki_hub/domain/value_objects/app_colors.dart';
 import 'package:haki_hub/presentation/shared/app_scaffold.dart';
+import 'package:haki_hub/presentation/shared/section_header.dart';
 import 'package:haki_hub/domain/value_objects/asset_strings.dart';
 import 'package:haki_hub/presentation/home/widgets/carousel_card.dart';
 
@@ -56,199 +56,96 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 26),
             // Civic Education Section
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
-                children: <Widget>[
-                  // Header
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        civicEducationString,
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Text(
-                        viewAllString,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: AppColors.secondaryColor500,
-                        ),
-                      )
-                    ],
+                children: [
+                  const SectionHeader(title: civicEducationString),
+                  size15VerticalSizedBox,
+                  GridView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                    ),
+                    itemCount: civicEducationData.length,
+                    itemBuilder: (context, index) {
+                      var item = civicEducationData[index];
+                      return InfoCard(
+                        icon: item['icon'],
+                        isTertiaryColor: true,
+                        title: item['title'],
+                        description: item['description'],
+                      );
+                    },
                   ),
-                  SizedBox(height: 14),
-                  // Card Items
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InfoCard(
-                        icon: Icons.money,
-                        isTertiaryColor: true,
-                        title: financeBill2024String,
-                        description: financeBillCardDescription,
-                      ),
-                      InfoCard(
-                        icon: Icons.lock,
-                        isTertiaryColor: true,
-                        title: dataProtectionActString,
-                        description: dataProtectionCardDescription,
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 14),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InfoCard(
-                        icon: Icons.accessibility,
-                        isTertiaryColor: true,
-                        title: protestingRightsString,
-                        description: protestingRightsCardDescription,
-                      ),
-                      InfoCard(
-                        icon: Icons.language,
-                        isTertiaryColor: true,
-                        title: ictBillString,
-                        description: ictBillCardDescription,
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),
-            const SizedBox(
-              height: 26,
-            ),
+            const SizedBox( height: 25),
+
             // Resources Section
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 children: [
-                  // Header
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        resourcesString,
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Text(
-                        viewAllString,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: AppColors.secondaryColor500,
-                        ),
-                      )
-                    ],
-                  ),
+                  const SectionHeader(title: resourcesString),
                   size15VerticalSizedBox,
                   // Card Items
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InfoCard(
-                        icon: Icons.health_and_safety,
+                  GridView.builder(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10,
+                    ),
+                    itemCount: resourcesData.length,
+                    itemBuilder: (context, index) {
+                      var item = resourcesData[index];
+                      return InfoCard(
+                        icon: item['icon'],
                         isSecondaryColor: true,
-                        title: firstAidCardDescription,
-                        description: firstAidCardDescription,
-                      ),
-                      InfoCard(
-                        icon: Icons.psychology,
-                        isSecondaryColor: true,
-                        title: mentalHealthString,
-                        description: mentalHealthCardDescription,
-                      ),
-                    ],
+                        title: item['title'],
+                        description: item['description'],
+                      );
+                    },
                   ),
-                  size15VerticalSizedBox,
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      InfoCard(
-                        icon: Icons.group,
-                        isSecondaryColor: true,
-                        title: communitiesString,
-                        description: communitiesCardDescription,
-                      ),
-                      InfoCard(
-                        icon: Icons.attach_file,
-                        isSecondaryColor: true,
-                        title: downloadsString,
-                        description: downloadsCardDescription,
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),
-            const SizedBox(
-              height: 26,
-            ),
+            const SizedBox(height: 26),
+
+            // Resources Section
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 children: [
-                  // Header
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        resourcesString,
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Text(
-                        viewAllString,
-                        style: TextStyle(
-                          fontSize: 14,
-                          color: AppColors.secondaryColor500,
-                        ),
-                      )
-                    ],
-                  ),
+                  const SectionHeader(title: resourcesString),
                   size15VerticalSizedBox,
-                  InfoCard(
-                    assetName: nine11Svg,
-                    isTertiaryColor: true,
-                    isFullLength: true,
-                    hasBorder: true,
-                    title: policeBrutalityTitleString,
-                    description: policeBrutalityCardDescription,
-                    onTap: () => Navigator.of(context).pushNamed(
-                      AppRoutes.policeHelplinePageRoute
-                    ),
-                  ),
-                  size15VerticalSizedBox,
-                  InfoCard(
-                    assetName: ambulanceSvg,
-                    isSecondaryColor: true,
-                    isFullLength: true,
-                    hasBorder: true,
-                    title: medicalEmergencyString,
-                    description: medicalEmergencyCardDescription,
-                    onTap: () => Navigator.of(context).pushNamed(
-                      AppRoutes.ambulanceHelplinePageRoute
-                    )
-                  ),
-                  size15VerticalSizedBox,
-                  InfoCard(
-                    assetName: buildingSvg,
-                    isFullLength: true,
-                    hasBorder: true,
-                    title: lawyerAssistanceString,
-                    description: lawyerAssistanceCardDescription,
-                    onTap: () => Navigator.of(context).pushNamed(
-                      AppRoutes.lawHelplinePageRoute
-                    ),
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: helplinesData.length,
+                    physics: const NeverScrollableScrollPhysics(),
+                    itemBuilder: (context, index) {
+                      var item = helplinesData[index];
+                      bool hasTertiaryOrSecondary = item.containsKey('isTertiaryColor') || item.containsKey('isSecondaryColor');
+                      bool isTertiary = hasTertiaryOrSecondary ? item['isTertiaryColor'] ?? false : false;
+                      bool isSecondary = hasTertiaryOrSecondary ? item['isSecondaryColor'] ?? false : false;
+
+                      return InfoCard(
+                        hasBorder: true,
+                        isFullLength: true,
+                        isTertiaryColor: isTertiary,
+                        isSecondaryColor: isSecondary,
+                        icon: item['icon'],
+                        title: item['title'],
+                        description: item['description'],
+                        onTap: () => Navigator.of(context).pushNamed(item['route']),
+                      );
+                    }
                   ),
                   size15VerticalSizedBox,
                 ],
