@@ -16,7 +16,7 @@ class HakiHub extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: AppColors.primaryColor400,
-        useMaterial3: false,
+        useMaterial3: true,
         textTheme: GoogleFonts.dmSansTextTheme()
       ),
       home: const BottomNavigation(),
