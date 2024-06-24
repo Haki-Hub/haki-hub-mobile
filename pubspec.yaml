@@ -16,6 +16,7 @@ dependencies:
   url_launcher: ^6.3.0
   fluentui_system_icons: ^1.1.244
   google_fonts: ^6.2.1
+  transparent_image: ^2.0.1
 
 dev_dependencies:
   flutter_test:

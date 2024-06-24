@@ -31,9 +31,7 @@ class HomePage extends StatelessWidget {
                   width: double.infinity,
                 ),
                 Positioned(
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
+                  bottom: 0, left: 0, right: 0,
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 10),
                     child: CarouselSlider(
