@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
+
 import 'package:haki_hub/domain/value_objects/app_colors.dart';
-import 'package:haki_hub/domain/value_objects/spaces.dart';
 
 class HelplineTile extends StatelessWidget {
   const HelplineTile({
@@ -20,52 +21,29 @@ class HelplineTile extends StatelessWidget {
       children: [
         InkWell(
           onTap: onPressed,
-          child: Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                      ),
-                    ),
-                    mediumVerticalSizedBox,
-                    Text(
-                      phone,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w700,
-                        fontSize: 14,
-                        color: AppColors.secondaryColor500,
-                      ),
-                    ),
-                  ],
-                ),
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: AppColors.secondaryColor500,
-                  ),
-                  child: const Icon(
-                    Icons.phone,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
+          child: ListTile(
+            title: Text(
+              title,
+              style: const TextStyle(
+                fontWeight: FontWeight.w700,
+                fontSize: 15,
+              ),
+            ),
+            subtitle: Text(
+              phone,
+              style: const TextStyle(
+                fontWeight: FontWeight.w700,
+                fontSize: 14,
+                color: AppColors.secondaryColor500,
+              ),
+            ),
+            trailing: const Icon(
+              FluentIcons.call_24_filled,
+              color: AppColors.secondaryColor500,
             ),
           ),
         ),
-        smallVerticalSizedBox,
-        const Divider(
-          color: AppColors.secondaryColor400,
-        ),
+        const Divider(color: AppColors.secondaryColor400),
       ],
     );
   }

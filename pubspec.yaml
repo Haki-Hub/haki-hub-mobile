@@ -15,6 +15,7 @@ dependencies:
   flutter_svg: ^2.0.10+1
   url_launcher: ^6.3.0
   fluentui_system_icons: ^1.1.244
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:

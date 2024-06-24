@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+
 import 'package:haki_hub/domain/models/content.dart';
 import 'package:haki_hub/domain/models/helpline.dart';
-import 'package:haki_hub/domain/value_objects/app_colors.dart';
-import 'package:haki_hub/domain/value_objects/asset_strings.dart';
 import 'package:haki_hub/domain/value_objects/enums.dart';
 import 'package:haki_hub/domain/value_objects/strings.dart';
+import 'package:haki_hub/domain/value_objects/app_colors.dart';
+import 'package:haki_hub/domain/value_objects/asset_strings.dart';
 import 'package:haki_hub/presentation/home/widgets/carousel_card.dart';
 
 final List<CarouselCard> carouselSliderItems = <CarouselCard>[
@@ -14,7 +15,7 @@ final List<CarouselCard> carouselSliderItems = <CarouselCard>[
     chipColor: AppColors.secondaryColor100,
     postTime: '12 hrs ago',
     title: 'Voting of the Finance Bill 2024',
-    subtitle: 'Track all the votes as they come  from parliament...',
+    subtitle: 'Track all the votes from parliament.',
   ),
   const CarouselCard(
     chipTitle: 'Join the Revolution',
@@ -22,7 +23,7 @@ final List<CarouselCard> carouselSliderItems = <CarouselCard>[
     chipColor: AppColors.tertiaryColor100,
     postTime: '',
     title: 'Interested in contributing to the cause?',
-    subtitle: 'Click to learn how you could help',
+    subtitle: 'Click to learn how you could help.',
   ),
   const CarouselCard(
     chipTitle: 'Upcoming Protest',
