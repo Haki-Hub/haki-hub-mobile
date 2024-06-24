@@ -1,5 +1,6 @@
+// import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+
 import 'package:haki_hub/domain/value_objects/app_colors.dart';
 import 'package:haki_hub/presentation/shared/icon_avatar.dart';
 
@@ -49,92 +50,84 @@ class InfoCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: isFullLength
-            ? MediaQuery.sizeOf(context).width - 20
-            : (MediaQuery.sizeOf(context).width / 2.2),
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+          ? MediaQuery.sizeOf(context).width - 20
+          : (MediaQuery.sizeOf(context).width / 2.2),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+        margin: EdgeInsets.only(bottom: isFullLength ? 10 : 0),
         decoration: BoxDecoration(
           color: hasBorder ? Colors.transparent : backgroundColor,
           borderRadius: BorderRadius.circular(10),
           border: hasBorder ? Border.all(color: borderColor, width: 1) : null,
         ),
         child: isFullLength
-            ? Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  IconAvatar(
-                    widget: assetName != null
-                        ? SvgPicture.asset(
-                            assetName!,
-                            width: 20,
-                            height: 20,
-                          )
-                        : const SizedBox(),
-                    isSecondaryColor: isSecondaryColor,
-                    isTertiaryColor: isTertiaryColor,
+          ? Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                IconAvatar(
+                  widget: Icon(
+                    icon,
+                    size: 30,
+                    color: mainColor,
                   ),
-                  const SizedBox(
-                    width: 14,
-                  ),
-                  Flexible(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          title,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600,
-                          ),
+                  isSecondaryColor: isSecondaryColor,
+                  isTertiaryColor: isTertiaryColor,
+                ),
+                const SizedBox(width: 14),
+                Flexible( 
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600,
                         ),
-                        const SizedBox(
-                          height: 10,
+                      ),
+                      const SizedBox(height: 10),
+                      Text(
+                        description,
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Colors.grey[700],
                         ),
-                        Text(
-                          description,
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.grey[700],
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
-              )
-            : Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  IconAvatar(
-                    widget: Icon(
-                      icon,
-                      size: 30,
-                      color: mainColor,
-                    ),
-                    isSecondaryColor: isSecondaryColor,
-                    isTertiaryColor: isTertiaryColor,
+                ),
+              ],
+            )
+          : Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconAvatar(
+                  widget: Icon(
+                    icon,
+                    size: 30,
+                    color: mainColor,
                   ),
-                  const SizedBox(
-                    height: 14,
+                  isSecondaryColor: isSecondaryColor,
+                  isTertiaryColor: isTertiaryColor,
+                ),
+                const SizedBox(height: 14),
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
                   ),
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                    ),
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  description,
+                  style: TextStyle(
+                    fontSize: 13,
+                    color: Colors.grey[700],
                   ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    description,
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.grey[700],
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
+            ),
       ),
     );
   }

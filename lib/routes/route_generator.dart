@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:haki_hub/domain/models/content.dart';
-import 'package:haki_hub/presentation/content/pages/update_details_page.dart';
-import 'package:haki_hub/presentation/helplines/pages/ambulance_helpline_page.dart';
-import 'package:haki_hub/presentation/helplines/pages/law_helpline_page.dart';
-import 'package:haki_hub/presentation/helplines/pages/police_helpline_page.dart';
+
 import 'package:haki_hub/routes/routes.dart';
+import 'package:haki_hub/domain/models/content.dart';
+import 'package:haki_hub/presentation/helplines/pages/law_helpline_page.dart';
+import 'package:haki_hub/presentation/content/pages/update_details_page.dart';
+import 'package:haki_hub/presentation/helplines/pages/police_helpline_page.dart';
+import 'package:haki_hub/presentation/helplines/pages/ambulance_helpline_page.dart';
 
 class GenerateRoute {
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {

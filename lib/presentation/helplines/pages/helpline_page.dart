@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:haki_hub/domain/value_objects/asset_strings.dart';
+
+import 'package:haki_hub/application/dummy_data.dart';
 import 'package:haki_hub/domain/value_objects/spaces.dart';
 import 'package:haki_hub/domain/value_objects/strings.dart';
-import 'package:haki_hub/presentation/shared/app_scaffold.dart';
 import 'package:haki_hub/presentation/shared/info_card.dart';
-import 'package:haki_hub/routes/routes.dart';
+import 'package:haki_hub/presentation/shared/app_scaffold.dart';
 
 class HelplinePage extends StatelessWidget {
   const HelplinePage({super.key});
@@ -49,37 +49,28 @@ class HelplinePage extends StatelessWidget {
                 ),
               ),
               mediumVerticalSizedBox,
-              InfoCard(
-                  assetName: ambulanceSvg,
-                  isSecondaryColor: true,
-                  isFullLength: true,
-                  hasBorder: true,
-                  title: medicalEmergencyString,
-                  description: medicalEmergencyCardDescription,
-                  onTap: () => Navigator.of(context)
-                      .pushNamed(AppRoutes.ambulanceHelplinePageRoute)),
-              size15VerticalSizedBox,
-              InfoCard(
-                assetName: nine11Svg,
-                isTertiaryColor: true,
-                isFullLength: true,
-                hasBorder: true,
-                title: policeBrutalityTitleString,
-                description: policeBrutalityCardDescription,
-                onTap: () => Navigator.of(context)
-                    .pushNamed(AppRoutes.policeHelplinePageRoute),
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: helplinesData.length,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  var item = helplinesData[index];
+                  bool hasTertiaryOrSecondary = item.containsKey('isTertiaryColor') || item.containsKey('isSecondaryColor');
+                  bool isTertiary = hasTertiaryOrSecondary ? item['isTertiaryColor'] ?? false : false;
+                  bool isSecondary = hasTertiaryOrSecondary ? item['isSecondaryColor'] ?? false : false;
+
+                  return InfoCard(
+                    hasBorder: true,
+                    isFullLength: true,
+                    isTertiaryColor: isTertiary,
+                    isSecondaryColor: isSecondary,
+                    icon: item['icon'],
+                    title: item['title'],
+                    description: item['description'],
+                    onTap: () => Navigator.of(context).pushNamed(item['route']),
+                  );
+                }
               ),
-              size15VerticalSizedBox,
-              InfoCard(
-                assetName: buildingSvg,
-                isFullLength: true,
-                hasBorder: true,
-                title: lawyerAssistanceString,
-                description: lawyerAssistanceCardDescription,
-                onTap: () => Navigator.of(context)
-                    .pushNamed(AppRoutes.lawHelplinePageRoute),
-              ),
-              size15VerticalSizedBox,
             ],
           ),
         ),
