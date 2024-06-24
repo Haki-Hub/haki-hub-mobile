@@ -20,6 +20,7 @@ class Law extends StatelessWidget {
     return AppScaffold(
       title: lawHelplinesString,
       body: SingleChildScrollView(
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: lawHelplines.map((helpline) {
             return HelplineTile(
