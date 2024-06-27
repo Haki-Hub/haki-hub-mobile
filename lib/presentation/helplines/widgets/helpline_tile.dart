@@ -41,9 +41,13 @@ class HelplineTile extends StatelessWidget {
               FluentIcons.call_24_filled,
               color: AppColors.secondaryColor500,
             ),
+            contentPadding: const EdgeInsets.all(5),
           ),
         ),
-        const Divider(color: AppColors.secondaryColor400),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8.0),
+          child: Divider(color: AppColors.secondaryColor400),
+        ),
       ],
     );
   }

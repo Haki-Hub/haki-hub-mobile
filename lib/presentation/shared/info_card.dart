@@ -1,4 +1,3 @@
-// import 'package:flutter_svg/svg.dart';
 import 'package:flutter/material.dart';
 
 import 'package:haki_hub/domain/value_objects/app_colors.dart';
@@ -50,9 +49,9 @@ class InfoCard extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: isFullLength
-          ? MediaQuery.sizeOf(context).width - 20
+          ? MediaQuery.sizeOf(context).width
           : (MediaQuery.sizeOf(context).width / 2.2),
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+        padding: EdgeInsets.all(isFullLength ? 0 : 8),
         margin: EdgeInsets.only(bottom: isFullLength ? 10 : 0),
         decoration: BoxDecoration(
           color: hasBorder ? Colors.transparent : backgroundColor,
@@ -60,53 +59,33 @@ class InfoCard extends StatelessWidget {
           border: hasBorder ? Border.all(color: borderColor, width: 1) : null,
         ),
         child: isFullLength
-          ? Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                IconAvatar(
-                  widget: Icon(
-                    icon,
-                    size: 30,
-                    color: mainColor,
-                  ),
-                  isSecondaryColor: isSecondaryColor,
-                  isTertiaryColor: isTertiaryColor,
+          ? ListTile(
+              leading: IconAvatar(
+                widget: Icon(icon, size: 30, color: mainColor),
+                isSecondaryColor: isSecondaryColor,
+                isTertiaryColor: isTertiaryColor,
+              ),
+              title: Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
                 ),
-                const SizedBox(width: 14),
-                Flexible( 
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      const SizedBox(height: 10),
-                      Text(
-                        description,
-                        style: TextStyle(
-                          fontSize: 13,
-                          color: Colors.grey[700],
-                        ),
-                      ),
-                    ],
-                  ),
+              ),
+              subtitle: Text(
+                description,
+                style: TextStyle(
+                  fontSize: 13,
+                  color: Colors.grey[800],
                 ),
-              ],
+              ),
             )
           : Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 IconAvatar(
-                  widget: Icon(
-                    icon,
-                    size: 30,
-                    color: mainColor,
-                  ),
+                  widget: Icon(icon, size: 30, color: mainColor),
                   isSecondaryColor: isSecondaryColor,
                   isTertiaryColor: isTertiaryColor,
                 ),
@@ -123,7 +102,7 @@ class InfoCard extends StatelessWidget {
                   description,
                   style: TextStyle(
                     fontSize: 13,
-                    color: Colors.grey[700],
+                    color: Colors.grey[800],
                   ),
                 ),
               ],

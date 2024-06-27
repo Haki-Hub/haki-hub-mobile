@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:haki_hub/domain/value_objects/spaces.dart';
 
 class CarouselCard extends StatelessWidget {
   const CarouselCard({
@@ -28,13 +27,12 @@ class CarouselCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
+            children: [
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                 decoration: BoxDecoration(
@@ -46,21 +44,19 @@ class CarouselCard extends StatelessWidget {
                   style: TextStyle(color: chipTitleColor, fontSize: 11),
                 ),
               ),
+              const Spacer(),
               Text(
                 postTime,
                 style: const TextStyle(fontSize: 12),
               )
             ],
           ),
-          size15VerticalSizedBox,
+          const SizedBox(height: 8),
           Text(
             title,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 2),
           Text(
             subtitle,
             style: const TextStyle(fontSize: 13),

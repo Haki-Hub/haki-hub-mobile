@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:transparent_image/transparent_image.dart';
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
+
 import 'package:haki_hub/domain/models/content.dart';
-import 'package:haki_hub/domain/value_objects/app_colors.dart';
 import 'package:haki_hub/domain/value_objects/spaces.dart';
 import 'package:haki_hub/domain/value_objects/strings.dart';
+import 'package:haki_hub/domain/value_objects/app_colors.dart';
 import 'package:haki_hub/presentation/shared/app_scaffold.dart';
 
 class UpdateDetailsPage extends StatelessWidget {
-  const UpdateDetailsPage({
-    super.key,
-    required this.content,
-  });
+  const UpdateDetailsPage({ super.key, required this.content });
 
   final Content content;
 
@@ -18,51 +18,50 @@ class UpdateDetailsPage extends StatelessWidget {
     final Size mediaQuerySize = MediaQuery.sizeOf(context);
 
     return AppScaffold(
-      title: updateDetailsString,
+      title: content.title,
       body: Stack(
         children: [
           SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(
-                  width: double.infinity,
-                  height: mediaQuerySize.width * 0.6,
-                  child: Image.asset(
-                    content.thumbnail,
-                    fit: BoxFit.fill,
+                Hero(
+                  tag: content.thumbnail, 
+                  child: FadeInImage(
+                    placeholder: MemoryImage(kTransparentImage), 
+                    image: AssetImage(content.thumbnail),
+                    height: 200,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  )
+                ),
+                smallVerticalSizedBox,
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: Text(
+                    content.title,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
                 smallVerticalSizedBox,
                 Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        content.title,
-                        style: const TextStyle(
-                          fontWeight: FontWeight.w700,
-                          fontSize: 16,
-                        ),
-                      ),
-                      smallVerticalSizedBox,
-                      Text(
-                        content.description!,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          height: 1.4,
-                        ),
-                      ),
-                    ],
+                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                  child: Text(
+                    content.description!,
+                    style: const TextStyle(fontSize: 14, height: 1.4),
+                    textAlign: TextAlign.justify
                   ),
                 ),
               ],
             ),
           ),
+          
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -76,11 +75,13 @@ class UpdateDetailsPage extends StatelessWidget {
                         ),
                       ),
                       icon: const Icon(
-                        Icons.share,
+                        FluentIcons.share_android_24_filled, color: Colors.white,
                       ),
                       label: const Text(
                         shareString,
-                        style: TextStyle(fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600, color: Colors.white
+                        ),
                       ),
                     ),
                   ),
@@ -94,11 +95,13 @@ class UpdateDetailsPage extends StatelessWidget {
                         ),
                       ),
                       icon: const Icon(
-                        Icons.download,
+                        FluentIcons.arrow_download_24_filled, color: Colors.white,
                       ),
                       label: const Text(
                         downloadString,
-                        style: TextStyle(fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600, color: Colors.white
+                        ),
                       ),
                     ),
                   ),

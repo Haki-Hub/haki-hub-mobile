@@ -20,6 +20,7 @@ class Police extends StatelessWidget {
     return AppScaffold(
       title: policeHelplinesString,
       body: SingleChildScrollView(
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: policeHelplines.map((Helpline helpline) {
             return HelplineTile(

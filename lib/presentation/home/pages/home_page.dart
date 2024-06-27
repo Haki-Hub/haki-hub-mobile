@@ -22,6 +22,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Header
             Stack(
               children: [
                 Image.asset(
@@ -30,13 +31,11 @@ class HomePage extends StatelessWidget {
                   width: double.infinity,
                 ),
                 Positioned(
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
+                  bottom: 0, left: 0, right: 0,
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 10),
                     child: CarouselSlider(
-                      options: CarouselOptions(height: 115.0),
+                      options: CarouselOptions(height: 125),
                       items: carouselSliderItems.map((CarouselCard card) {
                         return Builder(
                           builder: (BuildContext context) {
@@ -55,6 +54,7 @@ class HomePage extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 26),
+
             // Civic Education Section
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -93,7 +93,6 @@ class HomePage extends StatelessWidget {
                 children: [
                   const SectionHeader(title: resourcesString),
                   size15VerticalSizedBox,
-                  // Card Items
                   GridView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
@@ -118,12 +117,12 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 26),
 
-            // Resources Section
+            // Helplines Section
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 children: [
-                  const SectionHeader(title: resourcesString),
+                  const SectionHeader(title: helplinesString),
                   size15VerticalSizedBox,
                   ListView.builder(
                     shrinkWrap: true,
